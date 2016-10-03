@@ -24,12 +24,19 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
           <ul class="nav navbar-nav">
-            <li></li>
+            <% if current_user %>
+              <li><a href="/">Logged in as <%= current_user.email%></a></li>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
+              <li> <%= link_to "Add an Image", new_image_path %></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
-
+    
     <div class="container">
       <div class="flash_alert">
         <%= flash[:alert] %>
@@ -43,7 +50,7 @@
 
     <footer class="footer">
       <div class="text-muted">
-        <p>&copy; 2016 Maldon Meehan and Molly McGlone</p>
+        <p>&copy; 2016 Bang Nguyen</p>
       </div>
     </footer>
 
