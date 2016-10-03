@@ -1,4 +1,5 @@
 class Image < ApplicationRecord
+  belongs_to :user
   validates :title, :email, :image, :presence => true
 
   has_attached_file :image, styles: { :medium => "500x500>"}
