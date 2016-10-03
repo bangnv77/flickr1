@@ -1,0 +1,13 @@
+<h1><%= @user.email %></h1>
+<% if @user.images.any? %>
+  <ul>
+    <% @user.images.each do |image| %>
+    <li>
+      <%= image_tag image.image.url(:medium) %>
+      <p><%= image.title %></p>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You don't have any images yet!</p>
+<% end %>

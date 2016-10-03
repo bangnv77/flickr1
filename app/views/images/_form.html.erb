@@ -4,7 +4,7 @@
   <%= f.text_field :title %>
   <%= f.label :image %>
   <%= f.file_field :image %>
-  <%= f.hidden_field(:email, :value => current_user.email) %>
+  <%= f.hidden_field(:user_id, :value => current_user.id) %>
   <%= f.submit %>
 <% end %>
 
