@@ -1,4 +1,13 @@
-<h1>Home</h1>
-<% if current_user %>
-  <%= current_user.email %>
+<% if @images.any? %>
+  <ul>
+    <% @images.each do |image| %>
+      <li>
+        <div class="image-display">
+          <%= link_to (image_tag image.image.url(:medium)), image_path(image) %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p> No images yet. </p>
 <% end %>

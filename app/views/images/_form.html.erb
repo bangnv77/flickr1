@@ -1,0 +1,11 @@
+<%= form_for (@image) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field(:email, :value => current_user.email) %>
+  <%= f.submit %>
+<% end %>
+
+<p> <%= link_to "Return to all images", images_path  %></p>

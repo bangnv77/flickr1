@@ -1,0 +1,7 @@
+<h1><%= @image.title %></h1>
+
+<%= image_tag @image.image.url(:medium) %>
+
+<p><%= link_to "Edit image", edit_image_path(@image) %></p>
+<p><%= link_to "Delete image", image_path(@image), :data => {:confirm => "You sure?",
+  :method => "delete"} %></p>
