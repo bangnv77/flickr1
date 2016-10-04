@@ -1,13 +1,18 @@
 <% if @images.any? %>
+
   <ul>
     <% @images.each do |image| %>
       <li>
-        <div class="image-display">
+
+        <div class="display">
+
           <%= link_to (image_tag image.image.url(:medium)), image_path(image), id: image.title %>
         </div>
+
       </li>
     <% end %>
   </ul>
+  
 <% else %>
   <p> No images yet. </p>
 <% end %>
